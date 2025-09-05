@@ -231,6 +231,8 @@ func createTestInput(
 		ms.MountStoreWithDB(v, storetypes.StoreTypeIAVL, db)
 	}
 	tkeys := storetypes.NewTransientStoreKeys(paramstypes.TStoreKey)
+	okeys := storetypes.NewObjectStoreKeys(banktypes.ObjectStoreKey)
+
 	for _, v := range tkeys {
 		ms.MountStoreWithDB(v, storetypes.StoreTypeTransient, db)
 	}
@@ -274,6 +276,7 @@ func createTestInput(
 
 	bankKeeper := bankkeeper.NewBaseKeeper(
 		appCodec,
+		okeys[banktypes.ObjectStoreKey],
 		runtime.NewKVStoreService(keys[banktypes.StoreKey]),
 		accountKeeper,
 		blockedAddrs,
