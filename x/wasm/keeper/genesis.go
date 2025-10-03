@@ -61,6 +61,12 @@ func InitGenesis(ctx sdk.Context, keeper *Keeper, data types.GenesisState) ([]ab
 		}
 	}
 
+	for _, msg := range data.Blacklist {
+		if err := keeper.blacklistMsgs.Set(ctx, msg); err != nil {
+			return nil, err
+		}
+	}
+
 	// sanity check seq values
 	seqVal, err := keeper.PeekAutoIncrementID(ctx, types.KeySequenceCodeID)
 	if err != nil {

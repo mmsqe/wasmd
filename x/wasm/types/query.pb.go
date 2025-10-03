@@ -7,10 +7,6 @@ import (
 	bytes "bytes"
 	context "context"
 	fmt "fmt"
-	io "io"
-	math "math"
-	math_bits "math/bits"
-
 	github_com_cometbft_cometbft_libs_bytes "github.com/cometbft/cometbft/libs/bytes"
 	_ "github.com/cosmos/cosmos-proto"
 	query "github.com/cosmos/cosmos-sdk/types/query"
@@ -22,14 +18,15 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	io "io"
+	math "math"
+	math_bits "math/bits"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var (
-	_ = proto.Marshal
-	_ = fmt.Errorf
-	_ = math.Inf
-)
+var _ = proto.Marshal
+var _ = fmt.Errorf
+var _ = math.Inf
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the proto package it is being compiled against.
@@ -50,11 +47,9 @@ func (*QueryContractInfoRequest) ProtoMessage()    {}
 func (*QueryContractInfoRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{0}
 }
-
 func (m *QueryContractInfoRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractInfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractInfoRequest.Marshal(b, m, deterministic)
@@ -67,15 +62,12 @@ func (m *QueryContractInfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractInfoRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractInfoRequest.Merge(m, src)
 }
-
 func (m *QueryContractInfoRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractInfoRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractInfoRequest.DiscardUnknown(m)
 }
@@ -96,11 +88,9 @@ func (*QueryContractInfoResponse) ProtoMessage()    {}
 func (*QueryContractInfoResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{1}
 }
-
 func (m *QueryContractInfoResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractInfoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractInfoResponse.Marshal(b, m, deterministic)
@@ -113,15 +103,12 @@ func (m *QueryContractInfoResponse) XXX_Marshal(b []byte, deterministic bool) ([
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractInfoResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractInfoResponse.Merge(m, src)
 }
-
 func (m *QueryContractInfoResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractInfoResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractInfoResponse.DiscardUnknown(m)
 }
@@ -143,11 +130,9 @@ func (*QueryContractHistoryRequest) ProtoMessage()    {}
 func (*QueryContractHistoryRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{2}
 }
-
 func (m *QueryContractHistoryRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractHistoryRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractHistoryRequest.Marshal(b, m, deterministic)
@@ -160,15 +145,12 @@ func (m *QueryContractHistoryRequest) XXX_Marshal(b []byte, deterministic bool) 
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractHistoryRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractHistoryRequest.Merge(m, src)
 }
-
 func (m *QueryContractHistoryRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractHistoryRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractHistoryRequest.DiscardUnknown(m)
 }
@@ -189,11 +171,9 @@ func (*QueryContractHistoryResponse) ProtoMessage()    {}
 func (*QueryContractHistoryResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{3}
 }
-
 func (m *QueryContractHistoryResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractHistoryResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractHistoryResponse.Marshal(b, m, deterministic)
@@ -206,15 +186,12 @@ func (m *QueryContractHistoryResponse) XXX_Marshal(b []byte, deterministic bool)
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractHistoryResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractHistoryResponse.Merge(m, src)
 }
-
 func (m *QueryContractHistoryResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractHistoryResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractHistoryResponse.DiscardUnknown(m)
 }
@@ -235,11 +212,9 @@ func (*QueryContractsByCodeRequest) ProtoMessage()    {}
 func (*QueryContractsByCodeRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{4}
 }
-
 func (m *QueryContractsByCodeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractsByCodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractsByCodeRequest.Marshal(b, m, deterministic)
@@ -252,15 +227,12 @@ func (m *QueryContractsByCodeRequest) XXX_Marshal(b []byte, deterministic bool) 
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractsByCodeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractsByCodeRequest.Merge(m, src)
 }
-
 func (m *QueryContractsByCodeRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractsByCodeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractsByCodeRequest.DiscardUnknown(m)
 }
@@ -282,11 +254,9 @@ func (*QueryContractsByCodeResponse) ProtoMessage()    {}
 func (*QueryContractsByCodeResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{5}
 }
-
 func (m *QueryContractsByCodeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractsByCodeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractsByCodeResponse.Marshal(b, m, deterministic)
@@ -299,15 +269,12 @@ func (m *QueryContractsByCodeResponse) XXX_Marshal(b []byte, deterministic bool)
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractsByCodeResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractsByCodeResponse.Merge(m, src)
 }
-
 func (m *QueryContractsByCodeResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractsByCodeResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractsByCodeResponse.DiscardUnknown(m)
 }
@@ -329,11 +296,9 @@ func (*QueryAllContractStateRequest) ProtoMessage()    {}
 func (*QueryAllContractStateRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{6}
 }
-
 func (m *QueryAllContractStateRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryAllContractStateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryAllContractStateRequest.Marshal(b, m, deterministic)
@@ -346,15 +311,12 @@ func (m *QueryAllContractStateRequest) XXX_Marshal(b []byte, deterministic bool)
 		return b[:n], nil
 	}
 }
-
 func (m *QueryAllContractStateRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryAllContractStateRequest.Merge(m, src)
 }
-
 func (m *QueryAllContractStateRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryAllContractStateRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryAllContractStateRequest.DiscardUnknown(m)
 }
@@ -375,11 +337,9 @@ func (*QueryAllContractStateResponse) ProtoMessage()    {}
 func (*QueryAllContractStateResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{7}
 }
-
 func (m *QueryAllContractStateResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryAllContractStateResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryAllContractStateResponse.Marshal(b, m, deterministic)
@@ -392,15 +352,12 @@ func (m *QueryAllContractStateResponse) XXX_Marshal(b []byte, deterministic bool
 		return b[:n], nil
 	}
 }
-
 func (m *QueryAllContractStateResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryAllContractStateResponse.Merge(m, src)
 }
-
 func (m *QueryAllContractStateResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryAllContractStateResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryAllContractStateResponse.DiscardUnknown(m)
 }
@@ -421,11 +378,9 @@ func (*QueryRawContractStateRequest) ProtoMessage()    {}
 func (*QueryRawContractStateRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{8}
 }
-
 func (m *QueryRawContractStateRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryRawContractStateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryRawContractStateRequest.Marshal(b, m, deterministic)
@@ -438,15 +393,12 @@ func (m *QueryRawContractStateRequest) XXX_Marshal(b []byte, deterministic bool)
 		return b[:n], nil
 	}
 }
-
 func (m *QueryRawContractStateRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryRawContractStateRequest.Merge(m, src)
 }
-
 func (m *QueryRawContractStateRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryRawContractStateRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryRawContractStateRequest.DiscardUnknown(m)
 }
@@ -466,11 +418,9 @@ func (*QueryRawContractStateResponse) ProtoMessage()    {}
 func (*QueryRawContractStateResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{9}
 }
-
 func (m *QueryRawContractStateResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryRawContractStateResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryRawContractStateResponse.Marshal(b, m, deterministic)
@@ -483,15 +433,12 @@ func (m *QueryRawContractStateResponse) XXX_Marshal(b []byte, deterministic bool
 		return b[:n], nil
 	}
 }
-
 func (m *QueryRawContractStateResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryRawContractStateResponse.Merge(m, src)
 }
-
 func (m *QueryRawContractStateResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryRawContractStateResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryRawContractStateResponse.DiscardUnknown(m)
 }
@@ -513,11 +460,9 @@ func (*QuerySmartContractStateRequest) ProtoMessage()    {}
 func (*QuerySmartContractStateRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{10}
 }
-
 func (m *QuerySmartContractStateRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QuerySmartContractStateRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QuerySmartContractStateRequest.Marshal(b, m, deterministic)
@@ -530,15 +475,12 @@ func (m *QuerySmartContractStateRequest) XXX_Marshal(b []byte, deterministic boo
 		return b[:n], nil
 	}
 }
-
 func (m *QuerySmartContractStateRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QuerySmartContractStateRequest.Merge(m, src)
 }
-
 func (m *QuerySmartContractStateRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QuerySmartContractStateRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QuerySmartContractStateRequest.DiscardUnknown(m)
 }
@@ -558,11 +500,9 @@ func (*QuerySmartContractStateResponse) ProtoMessage()    {}
 func (*QuerySmartContractStateResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{11}
 }
-
 func (m *QuerySmartContractStateResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QuerySmartContractStateResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QuerySmartContractStateResponse.Marshal(b, m, deterministic)
@@ -575,15 +515,12 @@ func (m *QuerySmartContractStateResponse) XXX_Marshal(b []byte, deterministic bo
 		return b[:n], nil
 	}
 }
-
 func (m *QuerySmartContractStateResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QuerySmartContractStateResponse.Merge(m, src)
 }
-
 func (m *QuerySmartContractStateResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QuerySmartContractStateResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QuerySmartContractStateResponse.DiscardUnknown(m)
 }
@@ -601,11 +538,9 @@ func (*QueryCodeRequest) ProtoMessage()    {}
 func (*QueryCodeRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{12}
 }
-
 func (m *QueryCodeRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryCodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryCodeRequest.Marshal(b, m, deterministic)
@@ -618,15 +553,12 @@ func (m *QueryCodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, er
 		return b[:n], nil
 	}
 }
-
 func (m *QueryCodeRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryCodeRequest.Merge(m, src)
 }
-
 func (m *QueryCodeRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryCodeRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryCodeRequest.DiscardUnknown(m)
 }
@@ -644,11 +576,9 @@ func (*QueryCodeInfoRequest) ProtoMessage()    {}
 func (*QueryCodeInfoRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{13}
 }
-
 func (m *QueryCodeInfoRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryCodeInfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryCodeInfoRequest.Marshal(b, m, deterministic)
@@ -661,15 +591,12 @@ func (m *QueryCodeInfoRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte
 		return b[:n], nil
 	}
 }
-
 func (m *QueryCodeInfoRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryCodeInfoRequest.Merge(m, src)
 }
-
 func (m *QueryCodeInfoRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryCodeInfoRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryCodeInfoRequest.DiscardUnknown(m)
 }
@@ -690,11 +617,9 @@ func (*QueryCodeInfoResponse) ProtoMessage()    {}
 func (*QueryCodeInfoResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{14}
 }
-
 func (m *QueryCodeInfoResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryCodeInfoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryCodeInfoResponse.Marshal(b, m, deterministic)
@@ -707,15 +632,12 @@ func (m *QueryCodeInfoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byt
 		return b[:n], nil
 	}
 }
-
 func (m *QueryCodeInfoResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryCodeInfoResponse.Merge(m, src)
 }
-
 func (m *QueryCodeInfoResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryCodeInfoResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryCodeInfoResponse.DiscardUnknown(m)
 }
@@ -736,11 +658,9 @@ func (*CodeInfoResponse) ProtoMessage()    {}
 func (*CodeInfoResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{15}
 }
-
 func (m *CodeInfoResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *CodeInfoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_CodeInfoResponse.Marshal(b, m, deterministic)
@@ -753,15 +673,12 @@ func (m *CodeInfoResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, er
 		return b[:n], nil
 	}
 }
-
 func (m *CodeInfoResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_CodeInfoResponse.Merge(m, src)
 }
-
 func (m *CodeInfoResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *CodeInfoResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_CodeInfoResponse.DiscardUnknown(m)
 }
@@ -780,11 +697,9 @@ func (*QueryCodeResponse) ProtoMessage()    {}
 func (*QueryCodeResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{16}
 }
-
 func (m *QueryCodeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryCodeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryCodeResponse.Marshal(b, m, deterministic)
@@ -797,15 +712,12 @@ func (m *QueryCodeResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, e
 		return b[:n], nil
 	}
 }
-
 func (m *QueryCodeResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryCodeResponse.Merge(m, src)
 }
-
 func (m *QueryCodeResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryCodeResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryCodeResponse.DiscardUnknown(m)
 }
@@ -824,11 +736,9 @@ func (*QueryCodesRequest) ProtoMessage()    {}
 func (*QueryCodesRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{17}
 }
-
 func (m *QueryCodesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryCodesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryCodesRequest.Marshal(b, m, deterministic)
@@ -841,15 +751,12 @@ func (m *QueryCodesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, e
 		return b[:n], nil
 	}
 }
-
 func (m *QueryCodesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryCodesRequest.Merge(m, src)
 }
-
 func (m *QueryCodesRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryCodesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryCodesRequest.DiscardUnknown(m)
 }
@@ -869,11 +776,9 @@ func (*QueryCodesResponse) ProtoMessage()    {}
 func (*QueryCodesResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{18}
 }
-
 func (m *QueryCodesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryCodesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryCodesResponse.Marshal(b, m, deterministic)
@@ -886,15 +791,12 @@ func (m *QueryCodesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, 
 		return b[:n], nil
 	}
 }
-
 func (m *QueryCodesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryCodesResponse.Merge(m, src)
 }
-
 func (m *QueryCodesResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryCodesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryCodesResponse.DiscardUnknown(m)
 }
@@ -914,11 +816,9 @@ func (*QueryPinnedCodesRequest) ProtoMessage()    {}
 func (*QueryPinnedCodesRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{19}
 }
-
 func (m *QueryPinnedCodesRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryPinnedCodesRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryPinnedCodesRequest.Marshal(b, m, deterministic)
@@ -931,15 +831,12 @@ func (m *QueryPinnedCodesRequest) XXX_Marshal(b []byte, deterministic bool) ([]b
 		return b[:n], nil
 	}
 }
-
 func (m *QueryPinnedCodesRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryPinnedCodesRequest.Merge(m, src)
 }
-
 func (m *QueryPinnedCodesRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryPinnedCodesRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryPinnedCodesRequest.DiscardUnknown(m)
 }
@@ -960,11 +857,9 @@ func (*QueryPinnedCodesResponse) ProtoMessage()    {}
 func (*QueryPinnedCodesResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{20}
 }
-
 func (m *QueryPinnedCodesResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryPinnedCodesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryPinnedCodesResponse.Marshal(b, m, deterministic)
@@ -977,15 +872,12 @@ func (m *QueryPinnedCodesResponse) XXX_Marshal(b []byte, deterministic bool) ([]
 		return b[:n], nil
 	}
 }
-
 func (m *QueryPinnedCodesResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryPinnedCodesResponse.Merge(m, src)
 }
-
 func (m *QueryPinnedCodesResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryPinnedCodesResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryPinnedCodesResponse.DiscardUnknown(m)
 }
@@ -993,7 +885,8 @@ func (m *QueryPinnedCodesResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_QueryPinnedCodesResponse proto.InternalMessageInfo
 
 // QueryParamsRequest is the request type for the Query/Params RPC method.
-type QueryParamsRequest struct{}
+type QueryParamsRequest struct {
+}
 
 func (m *QueryParamsRequest) Reset()         { *m = QueryParamsRequest{} }
 func (m *QueryParamsRequest) String() string { return proto.CompactTextString(m) }
@@ -1001,11 +894,9 @@ func (*QueryParamsRequest) ProtoMessage()    {}
 func (*QueryParamsRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{21}
 }
-
 func (m *QueryParamsRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryParamsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryParamsRequest.Marshal(b, m, deterministic)
@@ -1018,15 +909,12 @@ func (m *QueryParamsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, 
 		return b[:n], nil
 	}
 }
-
 func (m *QueryParamsRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryParamsRequest.Merge(m, src)
 }
-
 func (m *QueryParamsRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryParamsRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryParamsRequest.DiscardUnknown(m)
 }
@@ -1045,11 +933,9 @@ func (*QueryParamsResponse) ProtoMessage()    {}
 func (*QueryParamsResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{22}
 }
-
 func (m *QueryParamsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryParamsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryParamsResponse.Marshal(b, m, deterministic)
@@ -1062,15 +948,12 @@ func (m *QueryParamsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte,
 		return b[:n], nil
 	}
 }
-
 func (m *QueryParamsResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryParamsResponse.Merge(m, src)
 }
-
 func (m *QueryParamsResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryParamsResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryParamsResponse.DiscardUnknown(m)
 }
@@ -1092,11 +975,9 @@ func (*QueryContractsByCreatorRequest) ProtoMessage()    {}
 func (*QueryContractsByCreatorRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{23}
 }
-
 func (m *QueryContractsByCreatorRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractsByCreatorRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractsByCreatorRequest.Marshal(b, m, deterministic)
@@ -1109,15 +990,12 @@ func (m *QueryContractsByCreatorRequest) XXX_Marshal(b []byte, deterministic boo
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractsByCreatorRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractsByCreatorRequest.Merge(m, src)
 }
-
 func (m *QueryContractsByCreatorRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractsByCreatorRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractsByCreatorRequest.DiscardUnknown(m)
 }
@@ -1139,11 +1017,9 @@ func (*QueryContractsByCreatorResponse) ProtoMessage()    {}
 func (*QueryContractsByCreatorResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{24}
 }
-
 func (m *QueryContractsByCreatorResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryContractsByCreatorResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryContractsByCreatorResponse.Marshal(b, m, deterministic)
@@ -1156,15 +1032,12 @@ func (m *QueryContractsByCreatorResponse) XXX_Marshal(b []byte, deterministic bo
 		return b[:n], nil
 	}
 }
-
 func (m *QueryContractsByCreatorResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryContractsByCreatorResponse.Merge(m, src)
 }
-
 func (m *QueryContractsByCreatorResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryContractsByCreatorResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryContractsByCreatorResponse.DiscardUnknown(m)
 }
@@ -1173,7 +1046,8 @@ var xxx_messageInfo_QueryContractsByCreatorResponse proto.InternalMessageInfo
 
 // QueryWasmLimitsConfigRequest is the request type for the
 // Query/WasmLimitsConfig RPC method.
-type QueryWasmLimitsConfigRequest struct{}
+type QueryWasmLimitsConfigRequest struct {
+}
 
 func (m *QueryWasmLimitsConfigRequest) Reset()         { *m = QueryWasmLimitsConfigRequest{} }
 func (m *QueryWasmLimitsConfigRequest) String() string { return proto.CompactTextString(m) }
@@ -1181,11 +1055,9 @@ func (*QueryWasmLimitsConfigRequest) ProtoMessage()    {}
 func (*QueryWasmLimitsConfigRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{25}
 }
-
 func (m *QueryWasmLimitsConfigRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryWasmLimitsConfigRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryWasmLimitsConfigRequest.Marshal(b, m, deterministic)
@@ -1198,15 +1070,12 @@ func (m *QueryWasmLimitsConfigRequest) XXX_Marshal(b []byte, deterministic bool)
 		return b[:n], nil
 	}
 }
-
 func (m *QueryWasmLimitsConfigRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryWasmLimitsConfigRequest.Merge(m, src)
 }
-
 func (m *QueryWasmLimitsConfigRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryWasmLimitsConfigRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryWasmLimitsConfigRequest.DiscardUnknown(m)
 }
@@ -1226,11 +1095,9 @@ func (*QueryWasmLimitsConfigResponse) ProtoMessage()    {}
 func (*QueryWasmLimitsConfigResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{26}
 }
-
 func (m *QueryWasmLimitsConfigResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryWasmLimitsConfigResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryWasmLimitsConfigResponse.Marshal(b, m, deterministic)
@@ -1243,15 +1110,12 @@ func (m *QueryWasmLimitsConfigResponse) XXX_Marshal(b []byte, deterministic bool
 		return b[:n], nil
 	}
 }
-
 func (m *QueryWasmLimitsConfigResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryWasmLimitsConfigResponse.Merge(m, src)
 }
-
 func (m *QueryWasmLimitsConfigResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryWasmLimitsConfigResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryWasmLimitsConfigResponse.DiscardUnknown(m)
 }
@@ -1278,11 +1142,9 @@ func (*QueryBuildAddressRequest) ProtoMessage()    {}
 func (*QueryBuildAddressRequest) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{27}
 }
-
 func (m *QueryBuildAddressRequest) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryBuildAddressRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryBuildAddressRequest.Marshal(b, m, deterministic)
@@ -1295,15 +1157,12 @@ func (m *QueryBuildAddressRequest) XXX_Marshal(b []byte, deterministic bool) ([]
 		return b[:n], nil
 	}
 }
-
 func (m *QueryBuildAddressRequest) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryBuildAddressRequest.Merge(m, src)
 }
-
 func (m *QueryBuildAddressRequest) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryBuildAddressRequest) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryBuildAddressRequest.DiscardUnknown(m)
 }
@@ -1323,11 +1182,9 @@ func (*QueryBuildAddressResponse) ProtoMessage()    {}
 func (*QueryBuildAddressResponse) Descriptor() ([]byte, []int) {
 	return fileDescriptor_9677c207036b9f2b, []int{28}
 }
-
 func (m *QueryBuildAddressResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-
 func (m *QueryBuildAddressResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
 		return xxx_messageInfo_QueryBuildAddressResponse.Marshal(b, m, deterministic)
@@ -1340,20 +1197,97 @@ func (m *QueryBuildAddressResponse) XXX_Marshal(b []byte, deterministic bool) ([
 		return b[:n], nil
 	}
 }
-
 func (m *QueryBuildAddressResponse) XXX_Merge(src proto.Message) {
 	xxx_messageInfo_QueryBuildAddressResponse.Merge(m, src)
 }
-
 func (m *QueryBuildAddressResponse) XXX_Size() int {
 	return m.Size()
 }
-
 func (m *QueryBuildAddressResponse) XXX_DiscardUnknown() {
 	xxx_messageInfo_QueryBuildAddressResponse.DiscardUnknown(m)
 }
 
 var xxx_messageInfo_QueryBuildAddressResponse proto.InternalMessageInfo
+
+// QueryBlacklistRequest is request type for the Query/Blacklist RPC method.
+type QueryBlacklistRequest struct {
+	// pagination defines an optional pagination for the request.
+	Pagination *query.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryBlacklistRequest) Reset()         { *m = QueryBlacklistRequest{} }
+func (m *QueryBlacklistRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryBlacklistRequest) ProtoMessage()    {}
+func (*QueryBlacklistRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9677c207036b9f2b, []int{29}
+}
+func (m *QueryBlacklistRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryBlacklistRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryBlacklistRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryBlacklistRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryBlacklistRequest.Merge(m, src)
+}
+func (m *QueryBlacklistRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryBlacklistRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryBlacklistRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryBlacklistRequest proto.InternalMessageInfo
+
+// QueryBlacklistResponse is response type for the Query/Blacklist RPC method.
+type QueryBlacklistResponse struct {
+	// blacklisted_msgs defines the list of blacklisted msgs.
+	BlacklistedMsgs []string `protobuf:"bytes,1,rep,name=blacklisted_msgs,json=blacklistedMsgs,proto3" json:"blacklisted_msgs,omitempty"`
+	// pagination defines the pagination in the response.
+	Pagination *query.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryBlacklistResponse) Reset()         { *m = QueryBlacklistResponse{} }
+func (m *QueryBlacklistResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryBlacklistResponse) ProtoMessage()    {}
+func (*QueryBlacklistResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_9677c207036b9f2b, []int{30}
+}
+func (m *QueryBlacklistResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryBlacklistResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryBlacklistResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryBlacklistResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryBlacklistResponse.Merge(m, src)
+}
+func (m *QueryBlacklistResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryBlacklistResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryBlacklistResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryBlacklistResponse proto.InternalMessageInfo
 
 func init() {
 	proto.RegisterType((*QueryContractInfoRequest)(nil), "cosmwasm.wasm.v1.QueryContractInfoRequest")
@@ -1385,116 +1319,122 @@ func init() {
 	proto.RegisterType((*QueryWasmLimitsConfigResponse)(nil), "cosmwasm.wasm.v1.QueryWasmLimitsConfigResponse")
 	proto.RegisterType((*QueryBuildAddressRequest)(nil), "cosmwasm.wasm.v1.QueryBuildAddressRequest")
 	proto.RegisterType((*QueryBuildAddressResponse)(nil), "cosmwasm.wasm.v1.QueryBuildAddressResponse")
+	proto.RegisterType((*QueryBlacklistRequest)(nil), "cosmwasm.wasm.v1.QueryBlacklistRequest")
+	proto.RegisterType((*QueryBlacklistResponse)(nil), "cosmwasm.wasm.v1.QueryBlacklistResponse")
 }
 
 func init() { proto.RegisterFile("cosmwasm/wasm/v1/query.proto", fileDescriptor_9677c207036b9f2b) }
 
 var fileDescriptor_9677c207036b9f2b = []byte{
-	// 1653 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x59, 0xcf, 0x6f, 0x13, 0xc7,
-	0x17, 0xcf, 0x04, 0xc7, 0x71, 0x26, 0xf9, 0x7e, 0x71, 0xe6, 0x1b, 0x20, 0x18, 0xb0, 0xa3, 0x05,
-	0x42, 0x08, 0xc4, 0x4b, 0xc2, 0x97, 0x46, 0xd0, 0x43, 0x15, 0x07, 0x4a, 0x40, 0x50, 0x82, 0x91,
-	0x8a, 0xd4, 0xaa, 0x72, 0xc7, 0xf6, 0xc4, 0xd9, 0xd6, 0xde, 0x35, 0x3b, 0x13, 0x42, 0x14, 0x85,
-	0x03, 0xa7, 0x4a, 0x3d, 0xb4, 0x55, 0x4f, 0xa5, 0x52, 0x7f, 0x48, 0x3d, 0xd0, 0xd2, 0x4a, 0x48,
-	0xad, 0x54, 0x54, 0xa9, 0xf7, 0x5c, 0x2a, 0xa1, 0xf6, 0xd2, 0x93, 0xd5, 0x86, 0x4a, 0x54, 0xfc,
-	0x09, 0x9c, 0xaa, 0x9d, 0x7d, 0xeb, 0x5d, 0xff, 0x18, 0xdb, 0x04, 0x1f, 0x7a, 0x31, 0xbb, 0x3b,
-	0xef, 0xbd, 0xf9, 0xcc, 0xe7, 0xfd, 0x98, 0xf7, 0x02, 0xde, 0x9f, 0xb3, 0x78, 0x69, 0x95, 0xf2,
-	0x92, 0x2e, 0x7f, 0x6e, 0x4e, 0xeb, 0x37, 0x56, 0x98, 0xbd, 0x96, 0x2c, 0xdb, 0x96, 0xb0, 0x48,
-	0xd4, 0x5b, 0x4d, 0xca, 0x9f, 0x9b, 0xd3, 0xb1, 0x91, 0x82, 0x55, 0xb0, 0xe4, 0xa2, 0xee, 0x3c,
-	0xb9, 0x72, 0xb1, 0x46, 0x2b, 0x62, 0xad, 0xcc, 0xb8, 0xb7, 0x5a, 0xb0, 0xac, 0x42, 0x91, 0xe9,
-	0xb4, 0x6c, 0xe8, 0xd4, 0x34, 0x2d, 0x41, 0x85, 0x61, 0x99, 0xde, 0xea, 0xa4, 0xa3, 0x6b, 0x71,
-	0x3d, 0x4b, 0x39, 0x73, 0x37, 0xd7, 0x6f, 0x4e, 0x67, 0x99, 0xa0, 0xd3, 0x7a, 0x99, 0x16, 0x0c,
-	0x53, 0x0a, 0x83, 0xec, 0x3e, 0x90, 0xf5, 0xc4, 0x82, 0x60, 0x63, 0xc3, 0xb4, 0x64, 0x98, 0x96,
-	0x2e, 0x7f, 0xe1, 0xd3, 0x5e, 0x57, 0x3e, 0xe3, 0x02, 0x76, 0x5f, 0xdc, 0x25, 0xed, 0x35, 0x3c,
-	0x7a, 0xd5, 0x51, 0x9e, 0xb7, 0x4c, 0x61, 0xd3, 0x9c, 0xb8, 0x60, 0x2e, 0x59, 0x69, 0x76, 0x63,
-	0x85, 0x71, 0x41, 0x66, 0x70, 0x3f, 0xcd, 0xe7, 0x6d, 0xc6, 0xf9, 0x28, 0x1a, 0x43, 0x13, 0x03,
-	0xa9, 0xd1, 0x5f, 0x7f, 0x98, 0x1a, 0x01, 0xf5, 0x39, 0x77, 0xe5, 0x9a, 0xb0, 0x0d, 0xb3, 0x90,
-	0xf6, 0x04, 0xb5, 0xef, 0x10, 0xde, 0xdb, 0xc4, 0x20, 0x2f, 0x5b, 0x26, 0x67, 0xdb, 0xb1, 0x48,
-	0x5e, 0xc7, 0xff, 0xc9, 0x81, 0xad, 0x8c, 0x61, 0x2e, 0x59, 0xa3, 0xbd, 0x63, 0x68, 0x62, 0x70,
-	0x26, 0x9e, 0xac, 0x77, 0x4a, 0x32, 0xb8, 0x65, 0x6a, 0x78, 0xb3, 0x92, 0xe8, 0x79, 0x54, 0x49,
-	0xa0, 0xa7, 0x95, 0x44, 0xcf, 0xbd, 0x27, 0x0f, 0x26, 0x51, 0x7a, 0x28, 0x17, 0x10, 0x38, 0x13,
-	0xfa, 0xfb, 0x8b, 0x04, 0xd2, 0x3e, 0x41, 0x78, 0x5f, 0x0d, 0xde, 0x05, 0x83, 0x0b, 0xcb, 0x5e,
-	0x7b, 0x01, 0x0e, 0xc8, 0xab, 0x18, 0xfb, 0x2e, 0x03, 0xb8, 0xe3, 0x49, 0xd0, 0x71, 0xfc, 0x9b,
-	0x74, 0xfd, 0x05, 0xfe, 0x4d, 0x2e, 0xd2, 0x02, 0x83, 0xfd, 0xd2, 0x01, 0x4d, 0xed, 0x21, 0xc2,
-	0xfb, 0x9b, 0x63, 0x03, 0x3a, 0xaf, 0xe0, 0x7e, 0x66, 0x0a, 0xdb, 0x60, 0x0e, 0xb8, 0x1d, 0x13,
-	0x83, 0x33, 0x93, 0x6a, 0x52, 0xe6, 0xad, 0x3c, 0x03, 0xfd, 0x73, 0xa6, 0xb0, 0xd7, 0x52, 0x03,
-	0x9b, 0x55, 0x62, 0x3c, 0x2b, 0xe4, 0x7c, 0x13, 0xe4, 0x47, 0xda, 0x22, 0x77, 0xd1, 0xd4, 0x40,
-	0xbf, 0x5d, 0xc7, 0x2a, 0x4f, 0xad, 0x39, 0x00, 0x3c, 0x56, 0xf7, 0xe0, 0xfe, 0x9c, 0x95, 0x67,
-	0x19, 0x23, 0x2f, 0x59, 0x0d, 0xa5, 0xc3, 0xce, 0xeb, 0x85, 0x7c, 0xd7, 0xa8, 0xfb, 0xbc, 0x9e,
-	0xba, 0x2a, 0x00, 0xa0, 0xee, 0x25, 0x3c, 0xe0, 0x45, 0x83, 0x4b, 0x5e, 0x2b, 0xcf, 0xfa, 0xa2,
-	0xdd, 0x63, 0xe8, 0xae, 0x87, 0x70, 0xae, 0x58, 0xf4, 0x40, 0x5e, 0x13, 0x54, 0xb0, 0x7f, 0x43,
-	0xe4, 0x7d, 0x85, 0xf0, 0x01, 0x05, 0x38, 0xe0, 0xef, 0x0c, 0x0e, 0x97, 0xac, 0x3c, 0x2b, 0x7a,
-	0x91, 0xb7, 0xa7, 0x31, 0xf2, 0x2e, 0x3b, 0xeb, 0xc1, 0x30, 0x03, 0x8d, 0xee, 0x71, 0x78, 0x03,
-	0x28, 0x4c, 0xd3, 0xd5, 0xae, 0x51, 0x78, 0x00, 0x63, 0xb9, 0x7b, 0x26, 0x4f, 0x05, 0x95, 0xe0,
-	0x86, 0xd2, 0x03, 0xf2, 0xcb, 0x59, 0x2a, 0xa8, 0x76, 0x12, 0x88, 0x69, 0xdc, 0x12, 0x88, 0x21,
-	0x38, 0x24, 0x35, 0x91, 0xd4, 0x94, 0xcf, 0xda, 0xa7, 0x08, 0xc7, 0xa5, 0xd6, 0xb5, 0x12, 0xb5,
-	0x45, 0xd7, 0xa0, 0x9e, 0x6b, 0x84, 0x9a, 0x1a, 0x7f, 0x56, 0x49, 0x90, 0x00, 0xb8, 0xcb, 0x8c,
-	0x73, 0x5a, 0x60, 0x77, 0x9f, 0x3c, 0x98, 0x1c, 0x34, 0xcc, 0xa2, 0x61, 0xb2, 0xcc, 0x3b, 0xdc,
-	0x32, 0x83, 0x47, 0x7a, 0x0b, 0x27, 0x94, 0xe0, 0xaa, 0xde, 0x0e, 0x1c, 0xaa, 0xe3, 0x3d, 0xdc,
-	0xc3, 0x1f, 0xc3, 0x51, 0xc8, 0xc4, 0xf6, 0xf9, 0xaf, 0xe9, 0x78, 0xa4, 0x2a, 0x1c, 0xbc, 0x8a,
-	0x94, 0x0a, 0xdf, 0xf4, 0xe2, 0x5d, 0x75, 0x1a, 0x80, 0xf9, 0x60, 0x9d, 0x4a, 0x0a, 0x6f, 0x55,
-	0x12, 0x61, 0x29, 0x76, 0xb6, 0x5a, 0x6f, 0x66, 0x70, 0x7f, 0xce, 0x66, 0x54, 0x58, 0xb6, 0xe4,
-	0xaf, 0x25, 0xed, 0x20, 0x48, 0x16, 0x71, 0x24, 0xb7, 0xcc, 0x72, 0xef, 0xf2, 0x95, 0xd2, 0xe8,
-	0x0e, 0x49, 0xc8, 0xff, 0x9f, 0x55, 0x12, 0x27, 0x0a, 0x86, 0x58, 0x5e, 0xc9, 0x26, 0x73, 0x56,
-	0x49, 0xcf, 0x59, 0x25, 0x26, 0xb2, 0x4b, 0xc2, 0x7f, 0x28, 0x1a, 0x59, 0xae, 0x67, 0xd7, 0x04,
-	0xe3, 0xc9, 0x05, 0x76, 0x2b, 0xe5, 0x3c, 0xa4, 0xab, 0x56, 0xc8, 0xdb, 0x78, 0xb7, 0x61, 0x72,
-	0x41, 0x4d, 0x61, 0x50, 0xc1, 0x32, 0x65, 0x66, 0x97, 0x0c, 0xce, 0x9d, 0xe4, 0x08, 0xa9, 0xee,
-	0xba, 0xb9, 0x5c, 0x8e, 0x71, 0x3e, 0x6f, 0x99, 0x4b, 0x46, 0x21, 0x98, 0x63, 0xbb, 0x02, 0x86,
-	0x16, 0xab, 0x76, 0xe0, 0xb2, 0x7b, 0xd8, 0x8b, 0xa3, 0x0d, 0x3c, 0x1d, 0xad, 0xe7, 0x29, 0xea,
-	0xf3, 0xf4, 0xb4, 0x92, 0xe8, 0x35, 0xf2, 0x2f, 0xc4, 0xd6, 0x55, 0x3c, 0xe0, 0x84, 0x41, 0x66,
-	0x99, 0xf2, 0xe5, 0x17, 0xa3, 0xcb, 0x31, 0xb3, 0x40, 0xf9, 0x72, 0x0b, 0xba, 0xc2, 0xdd, 0xa4,
-	0xeb, 0x62, 0x28, 0x12, 0x8a, 0xf6, 0x5d, 0x0c, 0x45, 0xfa, 0xa2, 0x61, 0xed, 0x0e, 0xc2, 0xc3,
-	0x81, 0x30, 0x06, 0xee, 0x2e, 0x38, 0xb7, 0x88, 0xc3, 0x9d, 0xd3, 0x97, 0x20, 0xb9, 0xb9, 0xd6,
-	0xec, 0x0a, 0xae, 0xa5, 0x3c, 0x15, 0xf1, 0xfa, 0x92, 0x74, 0x24, 0x07, 0x6b, 0x64, 0x3f, 0xa4,
-	0x98, 0x9b, 0xc6, 0x91, 0xa7, 0x95, 0x84, 0x7c, 0x77, 0x93, 0x08, 0xfc, 0xf7, 0x66, 0x00, 0x03,
-	0xf7, 0x52, 0xa3, 0xb6, 0xe6, 0xa3, 0x6d, 0xd7, 0xfc, 0xfb, 0x08, 0x93, 0xa0, 0x75, 0x38, 0xe2,
-	0x25, 0x8c, 0xab, 0x47, 0xf4, 0x8a, 0x7d, 0x27, 0x67, 0x0c, 0x90, 0x3c, 0xe0, 0x1d, 0xb2, 0x8b,
-	0xa5, 0x9f, 0xe2, 0x3d, 0x12, 0xec, 0xa2, 0x61, 0x9a, 0x2c, 0xdf, 0x82, 0x90, 0xed, 0x5f, 0x82,
-	0xef, 0x23, 0xe8, 0x8d, 0x6b, 0xf6, 0x00, 0x5a, 0xc6, 0x71, 0x04, 0xb2, 0xc6, 0x25, 0x25, 0x94,
-	0x1a, 0xdc, 0xaa, 0x24, 0xfa, 0xdd, 0xb4, 0xe1, 0xe9, 0x7e, 0x37, 0x63, 0xba, 0x78, 0xe0, 0x11,
-	0xf0, 0xce, 0x22, 0xb5, 0x69, 0xc9, 0x3b, 0xab, 0x96, 0xc6, 0xff, 0xab, 0xf9, 0x0a, 0xe8, 0x5e,
-	0xc6, 0xe1, 0xb2, 0xfc, 0x02, 0xf1, 0x30, 0xda, 0xe8, 0x30, 0x57, 0xa3, 0xe6, 0x7a, 0x76, 0x55,
-	0x9c, 0x40, 0x88, 0x37, 0xf4, 0x4e, 0x6e, 0x36, 0x7b, 0x14, 0xcf, 0xe1, 0x9d, 0x90, 0xdf, 0x99,
-	0x4e, 0x6f, 0xad, 0xff, 0x82, 0xc2, 0x5c, 0x97, 0x5b, 0x95, 0xef, 0x11, 0x5c, 0x5f, 0xcd, 0xd0,
-	0x02, 0x1d, 0xe7, 0x31, 0xa9, 0x8e, 0x10, 0x80, 0x97, 0xb5, 0xef, 0xfa, 0x86, 0x3d, 0x9d, 0x39,
-	0x4f, 0xa5, 0x7b, 0xde, 0x8c, 0x43, 0xe7, 0x72, 0x9d, 0xf2, 0xd2, 0x25, 0xa3, 0x64, 0x08, 0xa8,
-	0x4d, 0x9e, 0x5f, 0x67, 0xa1, 0xcd, 0x68, 0x5c, 0x87, 0x23, 0xed, 0xc6, 0xe1, 0x9c, 0xfc, 0xe2,
-	0x12, 0x9f, 0x86, 0x37, 0xc7, 0x79, 0x6e, 0xd0, 0xa6, 0x56, 0x8c, 0x62, 0x1e, 0x90, 0x7b, 0x6e,
-	0xdb, 0x07, 0xe5, 0x4a, 0xd6, 0x62, 0x57, 0x4f, 0x46, 0xb1, 0xac, 0xaa, 0x4d, 0x7c, 0xda, 0xfb,
-	0x9c, 0x3e, 0x25, 0x38, 0xc4, 0x69, 0x51, 0xc8, 0x32, 0x3f, 0x90, 0x96, 0xcf, 0xce, 0x9e, 0x86,
-	0x69, 0x88, 0x0c, 0xb5, 0x0b, 0x5c, 0x5e, 0x67, 0x43, 0xe9, 0x88, 0xf3, 0x61, 0xce, 0x2e, 0x70,
-	0xed, 0x0a, 0x0c, 0x8b, 0xb5, 0x60, 0xb7, 0x3f, 0x2c, 0xce, 0xfc, 0x32, 0x8c, 0xfb, 0xa4, 0x45,
-	0x72, 0x17, 0xe1, 0xa1, 0xe0, 0x40, 0x48, 0x9a, 0xcc, 0x46, 0xaa, 0xc9, 0x37, 0x76, 0xac, 0x23,
-	0x59, 0x17, 0xa7, 0x36, 0xfd, 0x9e, 0x93, 0x3e, 0x77, 0x7e, 0xfb, 0xeb, 0xe3, 0xde, 0x71, 0x72,
-	0x48, 0x6f, 0xf8, 0x1b, 0x80, 0x17, 0x46, 0xfa, 0x3a, 0xa0, 0xdc, 0x20, 0xf7, 0x11, 0xde, 0x59,
-	0x37, 0xd4, 0x91, 0xa9, 0x36, 0x7b, 0xd6, 0x0e, 0xa6, 0xb1, 0x64, 0xa7, 0xe2, 0x80, 0xf2, 0xb4,
-	0x8f, 0x32, 0x49, 0x8e, 0x77, 0x82, 0x52, 0x5f, 0x06, 0x64, 0x5f, 0x07, 0xd0, 0xc2, 0x1c, 0xd5,
-	0x16, 0x6d, 0xed, 0xc0, 0xd7, 0x16, 0x6d, 0xdd, 0x78, 0xa6, 0xcd, 0xfa, 0x68, 0x8f, 0x93, 0xc9,
-	0x66, 0x68, 0xf3, 0x4c, 0x5f, 0x87, 0x0a, 0xbc, 0xa1, 0xfb, 0xf3, 0xd9, 0xb7, 0x08, 0x47, 0xeb,
-	0x87, 0x16, 0xa2, 0xda, 0x5d, 0x31, 0x7a, 0xc5, 0xf4, 0x8e, 0xe5, 0x3b, 0x86, 0xdb, 0x40, 0x2e,
-	0x97, 0xc8, 0x7e, 0x44, 0x38, 0x5a, 0x3f, 0x4a, 0x28, 0xe1, 0x2a, 0xc6, 0x1c, 0x25, 0x5c, 0xd5,
-	0x8c, 0xa2, 0xa5, 0x7c, 0xb8, 0xb3, 0xe4, 0x54, 0x47, 0x70, 0x6d, 0xba, 0xaa, 0xaf, 0xfb, 0xd3,
-	0xc6, 0x06, 0xf9, 0x09, 0x61, 0xd2, 0x38, 0x31, 0x90, 0x13, 0x0a, 0x2c, 0xca, 0xc9, 0x27, 0x36,
-	0xfd, 0x1c, 0x1a, 0x80, 0xff, 0x15, 0x09, 0xfd, 0x34, 0x99, 0xed, 0x8c, 0x69, 0xc7, 0x50, 0x2d,
-	0xf8, 0xdb, 0x38, 0x24, 0xa3, 0x58, 0x53, 0x86, 0xa5, 0x1f, 0xba, 0x07, 0x5b, 0xca, 0x00, 0xa2,
-	0x29, 0x9f, 0x51, 0x8d, 0x8c, 0xb5, 0x8b, 0x57, 0xb2, 0x8a, 0xfb, 0x64, 0x3b, 0x41, 0x5a, 0x19,
-	0xf7, 0xca, 0x76, 0xec, 0x50, 0x6b, 0x21, 0x80, 0x70, 0xd0, 0x87, 0x30, 0x4a, 0x76, 0x37, 0x87,
-	0x40, 0x3e, 0x40, 0x38, 0xe2, 0xb5, 0x6a, 0x64, 0xbc, 0x85, 0xdd, 0x60, 0x35, 0x3c, 0xd2, 0x56,
-	0x0e, 0x20, 0xcc, 0xf8, 0x10, 0x8e, 0x90, 0xc3, 0xcd, 0x21, 0x4c, 0x39, 0x8d, 0x64, 0x80, 0x8a,
-	0x8f, 0x10, 0x1e, 0x0c, 0x34, 0x58, 0xe4, 0xa8, 0x62, 0xb3, 0xc6, 0x46, 0x2f, 0x36, 0xd9, 0x89,
-	0x28, 0x40, 0x3b, 0xe6, 0x43, 0x1b, 0x23, 0xf1, 0xe6, 0xd0, 0xb8, 0x5e, 0x96, 0x9a, 0xe4, 0x0e,
-	0xc2, 0x61, 0xb7, 0x3f, 0x22, 0x2a, 0xee, 0x6b, 0xda, 0xb0, 0xd8, 0xe1, 0x36, 0x52, 0xcf, 0x07,
-	0xc2, 0xdd, 0xf9, 0x67, 0x84, 0x49, 0x63, 0x4f, 0xa3, 0x4c, 0x30, 0x65, 0xb3, 0xa6, 0x4c, 0x30,
-	0x75, 0xc3, 0xd4, 0x71, 0x81, 0xe0, 0x3a, 0x74, 0x00, 0xfa, 0x7a, 0x5d, 0xef, 0xb0, 0x41, 0xbe,
-	0x44, 0x38, 0x5a, 0xdf, 0xbe, 0x28, 0x4b, 0x9b, 0xa2, 0x0f, 0x52, 0x96, 0x36, 0x55, 0x5f, 0xa4,
-	0x1d, 0x57, 0xdf, 0xc3, 0xce, 0xbf, 0x53, 0x45, 0xa9, 0x34, 0xe5, 0x76, 0x4b, 0xe4, 0x33, 0x84,
-	0x87, 0x82, 0xbd, 0x87, 0xb2, 0x49, 0x68, 0xd2, 0x4d, 0x29, 0x9b, 0x84, 0x66, 0xcd, 0x8c, 0x76,
-	0xca, 0x67, 0x74, 0x92, 0x4c, 0xb4, 0xa8, 0x5b, 0x59, 0x47, 0xdb, 0x63, 0x31, 0xb5, 0xb0, 0xf9,
-	0x67, 0xbc, 0xe7, 0xde, 0x56, 0xbc, 0x67, 0x73, 0x2b, 0x8e, 0x1e, 0x6d, 0xc5, 0xd1, 0x1f, 0x5b,
-	0x71, 0xf4, 0xe1, 0xe3, 0x78, 0xcf, 0xa3, 0xc7, 0xf1, 0x9e, 0xdf, 0x1f, 0xc7, 0x7b, 0xde, 0x18,
-	0x0f, 0x0c, 0xd2, 0xf3, 0x16, 0x2f, 0x5d, 0xf7, 0xac, 0xe6, 0xf5, 0x5b, 0xae, 0x75, 0xf9, 0x7f,
-	0x10, 0xd9, 0xb0, 0xfc, 0x7b, 0xff, 0xc9, 0x7f, 0x02, 0x00, 0x00, 0xff, 0xff, 0x3b, 0xe2, 0xae,
-	0x71, 0xea, 0x18, 0x00, 0x00,
+	// 1715 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x59, 0xcf, 0x6f, 0x13, 0x47,
+	0x14, 0xce, 0x04, 0xc7, 0xb1, 0x27, 0x69, 0x71, 0xa6, 0x21, 0x04, 0x03, 0x76, 0xb4, 0x40, 0x08,
+	0x81, 0x78, 0x49, 0x28, 0x8d, 0xa0, 0x87, 0xca, 0x0e, 0x94, 0x80, 0xa0, 0x84, 0x45, 0x2a, 0x52,
+	0xab, 0xca, 0x1d, 0xaf, 0x27, 0xce, 0x16, 0x7b, 0xd7, 0xec, 0x6c, 0x08, 0x51, 0x14, 0x0e, 0x9c,
+	0x2a, 0xb5, 0x52, 0x5b, 0xf5, 0x54, 0x2a, 0xf5, 0x87, 0xd4, 0x03, 0x2d, 0xad, 0x84, 0xd4, 0x4a,
+	0x45, 0x95, 0x7a, 0xcf, 0x11, 0xb5, 0x97, 0x9e, 0xac, 0x12, 0x2a, 0x51, 0xf1, 0x27, 0x70, 0xaa,
+	0x76, 0xf6, 0xad, 0x77, 0xfd, 0x63, 0x6d, 0x27, 0xf8, 0xd0, 0x8b, 0xb3, 0xde, 0x79, 0x6f, 0xe6,
+	0x9b, 0x6f, 0xde, 0x7b, 0xf3, 0xbd, 0x18, 0xef, 0x53, 0x0d, 0x5e, 0x5a, 0xa1, 0xbc, 0x24, 0x8b,
+	0x8f, 0x9b, 0xd3, 0xf2, 0x8d, 0x65, 0x66, 0xae, 0xa6, 0xca, 0xa6, 0x61, 0x19, 0x24, 0xe6, 0x8e,
+	0xa6, 0xc4, 0xc7, 0xcd, 0xe9, 0xf8, 0x70, 0xc1, 0x28, 0x18, 0x62, 0x50, 0xb6, 0x9f, 0x1c, 0xbb,
+	0x78, 0xe3, 0x2c, 0xd6, 0x6a, 0x99, 0x71, 0x77, 0xb4, 0x60, 0x18, 0x85, 0x22, 0x93, 0x69, 0x59,
+	0x93, 0xa9, 0xae, 0x1b, 0x16, 0xb5, 0x34, 0x43, 0x77, 0x47, 0x27, 0x6d, 0x5f, 0x83, 0xcb, 0x39,
+	0xca, 0x99, 0xb3, 0xb8, 0x7c, 0x73, 0x3a, 0xc7, 0x2c, 0x3a, 0x2d, 0x97, 0x69, 0x41, 0xd3, 0x85,
+	0x31, 0xd8, 0xee, 0x05, 0x5b, 0xd7, 0xcc, 0x0f, 0x36, 0x3e, 0x44, 0x4b, 0x9a, 0x6e, 0xc8, 0xe2,
+	0x13, 0x5e, 0xed, 0x71, 0xec, 0xb3, 0x0e, 0x60, 0xe7, 0x8b, 0x33, 0x24, 0xbd, 0x85, 0x47, 0xaf,
+	0xd8, 0xce, 0x73, 0x86, 0x6e, 0x99, 0x54, 0xb5, 0xce, 0xeb, 0x8b, 0x86, 0xc2, 0x6e, 0x2c, 0x33,
+	0x6e, 0x91, 0x19, 0xdc, 0x4f, 0xf3, 0x79, 0x93, 0x71, 0x3e, 0x8a, 0xc6, 0xd0, 0x44, 0x34, 0x33,
+	0xfa, 0xc7, 0x2f, 0x53, 0xc3, 0xe0, 0x9e, 0x76, 0x46, 0xae, 0x5a, 0xa6, 0xa6, 0x17, 0x14, 0xd7,
+	0x50, 0xfa, 0x09, 0xe1, 0x3d, 0x4d, 0x26, 0xe4, 0x65, 0x43, 0xe7, 0x6c, 0x3b, 0x33, 0x92, 0xb7,
+	0xf1, 0x4b, 0x2a, 0xcc, 0x95, 0xd5, 0xf4, 0x45, 0x63, 0xb4, 0x77, 0x0c, 0x4d, 0x0c, 0xcc, 0x24,
+	0x52, 0xf5, 0x87, 0x92, 0xf2, 0x2f, 0x99, 0x19, 0xda, 0xa8, 0x24, 0x7b, 0x1e, 0x55, 0x92, 0xe8,
+	0x59, 0x25, 0xd9, 0x73, 0xef, 0xe9, 0x83, 0x49, 0xa4, 0x0c, 0xaa, 0x3e, 0x83, 0xd3, 0xa1, 0x7f,
+	0xbf, 0x49, 0x22, 0xe9, 0x0b, 0x84, 0xf7, 0xd6, 0xe0, 0x9d, 0xd7, 0xb8, 0x65, 0x98, 0xab, 0x2f,
+	0xc0, 0x01, 0x79, 0x13, 0x63, 0xef, 0xc8, 0x00, 0xee, 0x78, 0x0a, 0x7c, 0xec, 0xf3, 0x4d, 0x39,
+	0xe7, 0x05, 0xe7, 0x9b, 0x5a, 0xa0, 0x05, 0x06, 0xeb, 0x29, 0x3e, 0x4f, 0xe9, 0x21, 0xc2, 0xfb,
+	0x9a, 0x63, 0x03, 0x3a, 0x2f, 0xe3, 0x7e, 0xa6, 0x5b, 0xa6, 0xc6, 0x6c, 0x70, 0x3b, 0x26, 0x06,
+	0x66, 0x26, 0x83, 0x49, 0x99, 0x33, 0xf2, 0x0c, 0xfc, 0xcf, 0xea, 0x96, 0xb9, 0x9a, 0x89, 0x6e,
+	0x54, 0x89, 0x71, 0x67, 0x21, 0xe7, 0x9a, 0x20, 0x3f, 0xdc, 0x16, 0xb9, 0x83, 0xa6, 0x06, 0xfa,
+	0xed, 0x3a, 0x56, 0x79, 0x66, 0xd5, 0x06, 0xe0, 0xb2, 0xba, 0x1b, 0xf7, 0xab, 0x46, 0x9e, 0x65,
+	0xb5, 0xbc, 0x60, 0x35, 0xa4, 0x84, 0xed, 0xaf, 0xe7, 0xf3, 0x5d, 0xa3, 0xee, 0xeb, 0x7a, 0xea,
+	0xaa, 0x00, 0x80, 0xba, 0xd7, 0x70, 0xd4, 0x8d, 0x06, 0x87, 0xbc, 0x56, 0x27, 0xeb, 0x99, 0x76,
+	0x8f, 0xa1, 0xbb, 0x2e, 0xc2, 0x74, 0xb1, 0xe8, 0x82, 0xbc, 0x6a, 0x51, 0x8b, 0xfd, 0x1f, 0x22,
+	0xef, 0x3b, 0x84, 0xf7, 0x07, 0x80, 0x03, 0xfe, 0x4e, 0xe3, 0x70, 0xc9, 0xc8, 0xb3, 0xa2, 0x1b,
+	0x79, 0xbb, 0x1b, 0x23, 0xef, 0x92, 0x3d, 0xee, 0x0f, 0x33, 0xf0, 0xe8, 0x1e, 0x87, 0x37, 0x80,
+	0x42, 0x85, 0xae, 0x74, 0x8d, 0xc2, 0xfd, 0x18, 0x8b, 0xd5, 0xb3, 0x79, 0x6a, 0x51, 0x01, 0x6e,
+	0x50, 0x89, 0x8a, 0x37, 0x67, 0xa8, 0x45, 0xa5, 0x13, 0x40, 0x4c, 0xe3, 0x92, 0x40, 0x0c, 0xc1,
+	0x21, 0xe1, 0x89, 0x84, 0xa7, 0x78, 0x96, 0xbe, 0x44, 0x38, 0x21, 0xbc, 0xae, 0x96, 0xa8, 0x69,
+	0x75, 0x0d, 0xea, 0xd9, 0x46, 0xa8, 0x99, 0xf1, 0xe7, 0x95, 0x24, 0xf1, 0x81, 0xbb, 0xc4, 0x38,
+	0xa7, 0x05, 0x76, 0xf7, 0xe9, 0x83, 0xc9, 0x01, 0x4d, 0x2f, 0x6a, 0x3a, 0xcb, 0x7e, 0xc0, 0x0d,
+	0xdd, 0xbf, 0xa5, 0xf7, 0x70, 0x32, 0x10, 0x5c, 0xf5, 0xb4, 0x7d, 0x9b, 0xea, 0x78, 0x0d, 0x67,
+	0xf3, 0x47, 0x71, 0x0c, 0x32, 0xb1, 0x7d, 0xfe, 0x4b, 0x32, 0x1e, 0xae, 0x1a, 0xfb, 0xaf, 0xa2,
+	0x40, 0x87, 0x1f, 0x7a, 0xf1, 0xae, 0x3a, 0x0f, 0xc0, 0x7c, 0xa0, 0xce, 0x25, 0x83, 0x37, 0x2b,
+	0xc9, 0xb0, 0x30, 0x3b, 0x53, 0xad, 0x37, 0x33, 0xb8, 0x5f, 0x35, 0x19, 0xb5, 0x0c, 0x53, 0xf0,
+	0xd7, 0x92, 0x76, 0x30, 0x24, 0x0b, 0x38, 0xa2, 0x2e, 0x31, 0xf5, 0x3a, 0x5f, 0x2e, 0x8d, 0xee,
+	0x10, 0x84, 0xbc, 0xfa, 0xbc, 0x92, 0x3c, 0x5e, 0xd0, 0xac, 0xa5, 0xe5, 0x5c, 0x4a, 0x35, 0x4a,
+	0xb2, 0x6a, 0x94, 0x98, 0x95, 0x5b, 0xb4, 0xbc, 0x87, 0xa2, 0x96, 0xe3, 0x72, 0x6e, 0xd5, 0x62,
+	0x3c, 0x35, 0xcf, 0x6e, 0x65, 0xec, 0x07, 0xa5, 0x3a, 0x0b, 0x79, 0x1f, 0x8f, 0x68, 0x3a, 0xb7,
+	0xa8, 0x6e, 0x69, 0xd4, 0x62, 0xd9, 0x32, 0x33, 0x4b, 0x1a, 0xe7, 0x76, 0x72, 0x84, 0x82, 0xee,
+	0xba, 0xb4, 0xaa, 0x32, 0xce, 0xe7, 0x0c, 0x7d, 0x51, 0x2b, 0xf8, 0x73, 0x6c, 0x97, 0x6f, 0xa2,
+	0x85, 0xea, 0x3c, 0x70, 0xd9, 0x3d, 0xec, 0xc5, 0xb1, 0x06, 0x9e, 0x8e, 0xd4, 0xf3, 0x14, 0xf3,
+	0x78, 0x7a, 0x56, 0x49, 0xf6, 0x6a, 0xf9, 0x17, 0x62, 0xeb, 0x0a, 0x8e, 0xda, 0x61, 0x90, 0x5d,
+	0xa2, 0x7c, 0xe9, 0xc5, 0xe8, 0xb2, 0xa7, 0x99, 0xa7, 0x7c, 0xa9, 0x05, 0x5d, 0xe1, 0x6e, 0xd2,
+	0x75, 0x21, 0x14, 0x09, 0xc5, 0xfa, 0x2e, 0x84, 0x22, 0x7d, 0xb1, 0xb0, 0x74, 0x07, 0xe1, 0x21,
+	0x5f, 0x18, 0x03, 0x77, 0xe7, 0xed, 0x5b, 0xc4, 0xe6, 0xce, 0xd6, 0x25, 0x48, 0x2c, 0x2e, 0x35,
+	0xbb, 0x82, 0x6b, 0x29, 0xcf, 0x44, 0x5c, 0x5d, 0xa2, 0x44, 0x54, 0x18, 0x23, 0xfb, 0x20, 0xc5,
+	0x9c, 0x34, 0x8e, 0x3c, 0xab, 0x24, 0xc5, 0x77, 0x27, 0x89, 0xe0, 0xfc, 0xde, 0xf5, 0x61, 0xe0,
+	0x6e, 0x6a, 0xd4, 0xd6, 0x7c, 0xb4, 0xed, 0x9a, 0x7f, 0x1f, 0x61, 0xe2, 0x9f, 0x1d, 0xb6, 0x78,
+	0x11, 0xe3, 0xea, 0x16, 0xdd, 0x62, 0xdf, 0xc9, 0x1e, 0x7d, 0x24, 0x47, 0xdd, 0x4d, 0x76, 0xb1,
+	0xf4, 0x53, 0xbc, 0x5b, 0x80, 0x5d, 0xd0, 0x74, 0x9d, 0xe5, 0x5b, 0x10, 0xb2, 0xfd, 0x4b, 0xf0,
+	0x23, 0x04, 0xda, 0xb8, 0x66, 0x0d, 0xa0, 0x65, 0x1c, 0x47, 0x20, 0x6b, 0x1c, 0x52, 0x42, 0x99,
+	0x81, 0xcd, 0x4a, 0xb2, 0xdf, 0x49, 0x1b, 0xae, 0xf4, 0x3b, 0x19, 0xd3, 0xc5, 0x0d, 0x0f, 0xc3,
+	0xe9, 0x2c, 0x50, 0x93, 0x96, 0xdc, 0xbd, 0x4a, 0x0a, 0x7e, 0xa5, 0xe6, 0x2d, 0xa0, 0x7b, 0x1d,
+	0x87, 0xcb, 0xe2, 0x0d, 0xc4, 0xc3, 0x68, 0xe3, 0x81, 0x39, 0x1e, 0x35, 0xd7, 0xb3, 0xe3, 0x62,
+	0x07, 0x42, 0xa2, 0x41, 0x3b, 0x39, 0xd9, 0xec, 0x52, 0x9c, 0xc6, 0x3b, 0x21, 0xbf, 0xb3, 0x9d,
+	0xde, 0x5a, 0x2f, 0x83, 0x43, 0xba, 0xcb, 0x52, 0xe5, 0x67, 0x04, 0xd7, 0x57, 0x33, 0xb4, 0x40,
+	0xc7, 0x39, 0x4c, 0xaa, 0x2d, 0x04, 0xe0, 0x65, 0xed, 0x55, 0xdf, 0x90, 0xeb, 0x93, 0x76, 0x5d,
+	0xba, 0x77, 0x9a, 0x09, 0x50, 0x2e, 0xd7, 0x28, 0x2f, 0x5d, 0xd4, 0x4a, 0x9a, 0x05, 0xb5, 0xc9,
+	0x3d, 0xd7, 0x59, 0x90, 0x19, 0x8d, 0xe3, 0xb0, 0xa5, 0x11, 0x1c, 0x56, 0xc5, 0x1b, 0x87, 0x78,
+	0x05, 0xbe, 0xd9, 0x87, 0xe7, 0x04, 0x6d, 0x66, 0x59, 0x2b, 0xe6, 0x01, 0xb9, 0x7b, 0x6c, 0x7b,
+	0xa1, 0x5c, 0x89, 0x5a, 0xec, 0xf8, 0x89, 0x28, 0x16, 0x55, 0xb5, 0xc9, 0x99, 0xf6, 0x6e, 0xf1,
+	0x4c, 0x09, 0x0e, 0x71, 0x5a, 0xb4, 0x44, 0x99, 0x8f, 0x2a, 0xe2, 0xd9, 0x5e, 0x53, 0xd3, 0x35,
+	0x2b, 0x4b, 0xcd, 0x02, 0x17, 0xd7, 0xd9, 0xa0, 0x12, 0xb1, 0x5f, 0xa4, 0xcd, 0x02, 0x97, 0x2e,
+	0x43, 0xb3, 0x58, 0x0b, 0x76, 0xfb, 0xcd, 0xa2, 0x94, 0x05, 0x35, 0x90, 0x29, 0x52, 0xf5, 0x7a,
+	0x51, 0xe3, 0x56, 0xb7, 0xab, 0xe4, 0xc7, 0x08, 0x8f, 0xd4, 0xaf, 0x50, 0xbd, 0x48, 0x63, 0x39,
+	0xf7, 0x25, 0xcb, 0x67, 0x4b, 0xbc, 0x00, 0x31, 0xa6, 0xec, 0xf4, 0xbd, 0xbf, 0xc4, 0x0b, 0xdd,
+	0x8b, 0xa3, 0x99, 0xc7, 0x04, 0xf7, 0x09, 0x38, 0xe4, 0x2e, 0xc2, 0x83, 0xfe, 0x06, 0x98, 0x34,
+	0xe9, 0x05, 0x83, 0x3a, 0xfd, 0xf8, 0xd1, 0x8e, 0x6c, 0x9d, 0xf5, 0xa5, 0xe9, 0x0f, 0xed, 0x72,
+	0x71, 0xe7, 0xcf, 0x7f, 0x3e, 0xef, 0x1d, 0x27, 0x07, 0xe5, 0x86, 0xff, 0x79, 0xb8, 0x69, 0x23,
+	0xaf, 0xc1, 0xa9, 0xac, 0x93, 0xfb, 0x08, 0xef, 0xac, 0x6b, 0x62, 0xc9, 0x54, 0x9b, 0x35, 0x6b,
+	0x1b, 0xf1, 0x78, 0xaa, 0x53, 0x73, 0x40, 0x79, 0xca, 0x43, 0x99, 0x22, 0xc7, 0x3a, 0x41, 0x29,
+	0x2f, 0x01, 0xb2, 0xef, 0x7d, 0x68, 0xa1, 0x6f, 0x6c, 0x8b, 0xb6, 0xb6, 0xc1, 0x6d, 0x8b, 0xb6,
+	0xae, 0x1d, 0x95, 0x66, 0x3d, 0xb4, 0xc7, 0xc8, 0x64, 0x33, 0xb4, 0x79, 0x26, 0xaf, 0xc1, 0x8d,
+	0xb3, 0x2e, 0x7b, 0xfd, 0xe8, 0x8f, 0x08, 0xc7, 0xea, 0x9b, 0x34, 0x12, 0xb4, 0x7a, 0x40, 0xab,
+	0x19, 0x97, 0x3b, 0xb6, 0xef, 0x18, 0x6e, 0x03, 0xb9, 0x5c, 0x20, 0xfb, 0x15, 0xe1, 0x58, 0x7d,
+	0xeb, 0x14, 0x08, 0x37, 0xa0, 0xad, 0x0b, 0x84, 0x1b, 0xd4, 0x93, 0x49, 0x19, 0x0f, 0xee, 0x2c,
+	0x39, 0xd9, 0x11, 0x5c, 0x93, 0xae, 0xc8, 0x6b, 0x5e, 0x77, 0xb5, 0x4e, 0x7e, 0x43, 0x98, 0x34,
+	0x76, 0x48, 0xe4, 0x78, 0x00, 0x96, 0xc0, 0x4e, 0x2f, 0x3e, 0xbd, 0x05, 0x0f, 0xc0, 0xff, 0x86,
+	0x80, 0x7e, 0x8a, 0xcc, 0x76, 0xc6, 0xb4, 0x3d, 0x51, 0x2d, 0xf8, 0xdb, 0x38, 0x24, 0xa2, 0x58,
+	0x0a, 0x0c, 0x4b, 0x2f, 0x74, 0x0f, 0xb4, 0xb4, 0x01, 0x44, 0x53, 0x1e, 0xa3, 0x12, 0x19, 0x6b,
+	0x17, 0xaf, 0x64, 0x05, 0xf7, 0x09, 0xf9, 0x44, 0x5a, 0x4d, 0xee, 0x5e, 0x53, 0xf1, 0x83, 0xad,
+	0x8d, 0x00, 0xc2, 0x01, 0x0f, 0xc2, 0x28, 0x19, 0x69, 0x0e, 0x81, 0x7c, 0x82, 0x70, 0xc4, 0x95,
+	0xa6, 0x64, 0xbc, 0xc5, 0xbc, 0xfe, 0x6a, 0x78, 0xb8, 0xad, 0x1d, 0x40, 0x98, 0xf1, 0x20, 0x1c,
+	0x26, 0x87, 0x9a, 0x43, 0x98, 0xb2, 0x85, 0xb3, 0x8f, 0x8a, 0xcf, 0x10, 0x1e, 0xf0, 0x09, 0x4a,
+	0x72, 0x24, 0x60, 0xb1, 0x46, 0x61, 0x1b, 0x9f, 0xec, 0xc4, 0x14, 0xa0, 0x1d, 0xf5, 0xa0, 0x8d,
+	0x91, 0x44, 0x73, 0x68, 0x5c, 0x2e, 0x0b, 0x4f, 0x72, 0x07, 0xe1, 0xb0, 0xa3, 0x07, 0x49, 0x10,
+	0xf7, 0x35, 0xb2, 0x33, 0x7e, 0xa8, 0x8d, 0xd5, 0xd6, 0x40, 0x38, 0x2b, 0xff, 0x8e, 0x30, 0x69,
+	0xd4, 0x70, 0x81, 0x09, 0x16, 0x28, 0x4e, 0x03, 0x13, 0x2c, 0x58, 0x20, 0x76, 0x5c, 0x20, 0xb8,
+	0x0c, 0x8a, 0x47, 0x5e, 0xab, 0xd3, 0x4a, 0xeb, 0xe4, 0x5b, 0x84, 0x63, 0xf5, 0x72, 0x2d, 0xb0,
+	0xb4, 0x05, 0xe8, 0xbe, 0xc0, 0xd2, 0x16, 0xa4, 0x03, 0xa5, 0x63, 0xc1, 0xf7, 0xb0, 0xfd, 0x77,
+	0xaa, 0x28, 0x9c, 0xa6, 0x1c, 0x75, 0x48, 0xbe, 0x42, 0x78, 0xd0, 0xaf, 0xb5, 0x02, 0x45, 0x42,
+	0x13, 0xf5, 0x18, 0x28, 0x12, 0x9a, 0x89, 0x37, 0xe9, 0xa4, 0xc7, 0xe8, 0x24, 0x99, 0x68, 0x51,
+	0xb7, 0x72, 0xb6, 0xb7, 0xcb, 0xa2, 0x9d, 0x1d, 0xd1, 0xaa, 0xb2, 0x22, 0x41, 0x89, 0x58, 0xaf,
+	0xee, 0xe2, 0x13, 0xed, 0x0d, 0xb7, 0x2a, 0x5e, 0xaa, 0x92, 0x2d, 0x33, 0xbf, 0xf1, 0x38, 0xd1,
+	0x73, 0x6f, 0x33, 0xd1, 0xb3, 0xb1, 0x99, 0x40, 0x8f, 0x36, 0x13, 0xe8, 0xef, 0xcd, 0x04, 0xfa,
+	0xf4, 0x49, 0xa2, 0xe7, 0xd1, 0x93, 0x44, 0xcf, 0x5f, 0x4f, 0x12, 0x3d, 0xef, 0x8c, 0xfb, 0xfe,
+	0x99, 0x31, 0x67, 0xf0, 0xd2, 0x35, 0x77, 0xc6, 0xbc, 0x7c, 0xcb, 0x99, 0x59, 0xfc, 0x0e, 0x94,
+	0x0b, 0x8b, 0xdf, 0x5c, 0x4e, 0xfc, 0x17, 0x00, 0x00, 0xff, 0xff, 0x2a, 0x98, 0x4c, 0xcc, 0x6e,
+	0x1a, 0x00, 0x00,
 }
 
 func (this *QueryContractInfoResponse) Equal(that interface{}) bool {
@@ -1524,7 +1464,6 @@ func (this *QueryContractInfoResponse) Equal(that interface{}) bool {
 	}
 	return true
 }
-
 func (this *QueryCodeInfoResponse) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1558,7 +1497,6 @@ func (this *QueryCodeInfoResponse) Equal(that interface{}) bool {
 	}
 	return true
 }
-
 func (this *CodeInfoResponse) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1592,7 +1530,6 @@ func (this *CodeInfoResponse) Equal(that interface{}) bool {
 	}
 	return true
 }
-
 func (this *QueryCodeResponse) Equal(that interface{}) bool {
 	if that == nil {
 		return this == nil
@@ -1622,10 +1559,8 @@ func (this *QueryCodeResponse) Equal(that interface{}) bool {
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
-var (
-	_ context.Context
-	_ grpc.ClientConn
-)
+var _ context.Context
+var _ grpc.ClientConn
 
 // This is a compile-time assertion to ensure that this generated file
 // is compatible with the grpc package it is being compiled against.
@@ -1664,6 +1599,8 @@ type QueryClient interface {
 	WasmLimitsConfig(ctx context.Context, in *QueryWasmLimitsConfigRequest, opts ...grpc.CallOption) (*QueryWasmLimitsConfigResponse, error)
 	// BuildAddress builds a contract address
 	BuildAddress(ctx context.Context, in *QueryBuildAddressRequest, opts ...grpc.CallOption) (*QueryBuildAddressResponse, error)
+	// Blacklist gets the blacklist msg types
+	Blacklist(ctx context.Context, in *QueryBlacklistRequest, opts ...grpc.CallOption) (*QueryBlacklistResponse, error)
 }
 
 type queryClient struct {
@@ -1800,6 +1737,15 @@ func (c *queryClient) BuildAddress(ctx context.Context, in *QueryBuildAddressReq
 	return out, nil
 }
 
+func (c *queryClient) Blacklist(ctx context.Context, in *QueryBlacklistRequest, opts ...grpc.CallOption) (*QueryBlacklistResponse, error) {
+	out := new(QueryBlacklistResponse)
+	err := c.cc.Invoke(ctx, "/cosmwasm.wasm.v1.Query/Blacklist", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 type QueryServer interface {
 	// ContractInfo gets the contract meta data
@@ -1831,65 +1777,58 @@ type QueryServer interface {
 	WasmLimitsConfig(context.Context, *QueryWasmLimitsConfigRequest) (*QueryWasmLimitsConfigResponse, error)
 	// BuildAddress builds a contract address
 	BuildAddress(context.Context, *QueryBuildAddressRequest) (*QueryBuildAddressResponse, error)
+	// Blacklist gets the blacklist msg types
+	Blacklist(context.Context, *QueryBlacklistRequest) (*QueryBlacklistResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
-type UnimplementedQueryServer struct{}
+type UnimplementedQueryServer struct {
+}
 
 func (*UnimplementedQueryServer) ContractInfo(ctx context.Context, req *QueryContractInfoRequest) (*QueryContractInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ContractInfo not implemented")
 }
-
 func (*UnimplementedQueryServer) ContractHistory(ctx context.Context, req *QueryContractHistoryRequest) (*QueryContractHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ContractHistory not implemented")
 }
-
 func (*UnimplementedQueryServer) ContractsByCode(ctx context.Context, req *QueryContractsByCodeRequest) (*QueryContractsByCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ContractsByCode not implemented")
 }
-
 func (*UnimplementedQueryServer) AllContractState(ctx context.Context, req *QueryAllContractStateRequest) (*QueryAllContractStateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AllContractState not implemented")
 }
-
 func (*UnimplementedQueryServer) RawContractState(ctx context.Context, req *QueryRawContractStateRequest) (*QueryRawContractStateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RawContractState not implemented")
 }
-
 func (*UnimplementedQueryServer) SmartContractState(ctx context.Context, req *QuerySmartContractStateRequest) (*QuerySmartContractStateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SmartContractState not implemented")
 }
-
 func (*UnimplementedQueryServer) Code(ctx context.Context, req *QueryCodeRequest) (*QueryCodeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Code not implemented")
 }
-
 func (*UnimplementedQueryServer) Codes(ctx context.Context, req *QueryCodesRequest) (*QueryCodesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Codes not implemented")
 }
-
 func (*UnimplementedQueryServer) CodeInfo(ctx context.Context, req *QueryCodeInfoRequest) (*QueryCodeInfoResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CodeInfo not implemented")
 }
-
 func (*UnimplementedQueryServer) PinnedCodes(ctx context.Context, req *QueryPinnedCodesRequest) (*QueryPinnedCodesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method PinnedCodes not implemented")
 }
-
 func (*UnimplementedQueryServer) Params(ctx context.Context, req *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
 }
-
 func (*UnimplementedQueryServer) ContractsByCreator(ctx context.Context, req *QueryContractsByCreatorRequest) (*QueryContractsByCreatorResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ContractsByCreator not implemented")
 }
-
 func (*UnimplementedQueryServer) WasmLimitsConfig(ctx context.Context, req *QueryWasmLimitsConfigRequest) (*QueryWasmLimitsConfigResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method WasmLimitsConfig not implemented")
 }
-
 func (*UnimplementedQueryServer) BuildAddress(ctx context.Context, req *QueryBuildAddressRequest) (*QueryBuildAddressResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BuildAddress not implemented")
+}
+func (*UnimplementedQueryServer) Blacklist(ctx context.Context, req *QueryBlacklistRequest) (*QueryBlacklistResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Blacklist not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -2148,6 +2087,24 @@ func _Query_BuildAddress_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_Blacklist_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryBlacklistRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Blacklist(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/cosmwasm.wasm.v1.Query/Blacklist",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Blacklist(ctx, req.(*QueryBlacklistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "cosmwasm.wasm.v1.Query",
 	HandlerType: (*QueryServer)(nil),
@@ -2207,6 +2164,10 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "BuildAddress",
 			Handler:    _Query_BuildAddress_Handler,
+		},
+		{
+			MethodName: "Blacklist",
+			Handler:    _Query_Blacklist_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -3333,6 +3294,85 @@ func (m *QueryBuildAddressResponse) MarshalToSizedBuffer(dAtA []byte) (int, erro
 	return len(dAtA) - i, nil
 }
 
+func (m *QueryBlacklistRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryBlacklistRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryBlacklistRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryBlacklistResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryBlacklistResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryBlacklistResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.BlacklistedMsgs) > 0 {
+		for iNdEx := len(m.BlacklistedMsgs) - 1; iNdEx >= 0; iNdEx-- {
+			i -= len(m.BlacklistedMsgs[iNdEx])
+			copy(dAtA[i:], m.BlacklistedMsgs[iNdEx])
+			i = encodeVarintQuery(dAtA, i, uint64(len(m.BlacklistedMsgs[iNdEx])))
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -3344,7 +3384,6 @@ func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
-
 func (m *QueryContractInfoRequest) Size() (n int) {
 	if m == nil {
 		return 0
@@ -3806,14 +3845,44 @@ func (m *QueryBuildAddressResponse) Size() (n int) {
 	return n
 }
 
+func (m *QueryBlacklistRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryBlacklistResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.BlacklistedMsgs) > 0 {
+		for _, s := range m.BlacklistedMsgs {
+			l = len(s)
+			n += 1 + l + sovQuery(uint64(l))
+		}
+	}
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
 func sovQuery(x uint64) (n int) {
 	return (math_bits.Len64(x|1) + 6) / 7
 }
-
 func sozQuery(x uint64) (n int) {
 	return sovQuery(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-
 func (m *QueryContractInfoRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -3896,7 +3965,6 @@ func (m *QueryContractInfoRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryContractInfoResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4012,7 +4080,6 @@ func (m *QueryContractInfoResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryContractHistoryRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4131,7 +4198,6 @@ func (m *QueryContractHistoryRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryContractHistoryResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4252,7 +4318,6 @@ func (m *QueryContractHistoryResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryContractsByCodeRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4358,7 +4423,6 @@ func (m *QueryContractsByCodeRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryContractsByCodeResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4477,7 +4541,6 @@ func (m *QueryContractsByCodeResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryAllContractStateRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4596,7 +4659,6 @@ func (m *QueryAllContractStateRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryAllContractStateResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4717,7 +4779,6 @@ func (m *QueryAllContractStateResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryRawContractStateRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4834,7 +4895,6 @@ func (m *QueryRawContractStateRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryRawContractStateResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -4919,7 +4979,6 @@ func (m *QueryRawContractStateResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QuerySmartContractStateRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5036,7 +5095,6 @@ func (m *QuerySmartContractStateRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QuerySmartContractStateResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5121,7 +5179,6 @@ func (m *QuerySmartContractStateResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryCodeRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5191,7 +5248,6 @@ func (m *QueryCodeRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryCodeInfoRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5261,7 +5317,6 @@ func (m *QueryCodeInfoRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryCodeInfoResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5430,7 +5485,6 @@ func (m *QueryCodeInfoResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *CodeInfoResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5599,7 +5653,6 @@ func (m *CodeInfoResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryCodeResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5720,7 +5773,6 @@ func (m *QueryCodeResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryCodesRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5807,7 +5859,6 @@ func (m *QueryCodesRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryCodesResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -5928,7 +5979,6 @@ func (m *QueryCodesResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryPinnedCodesRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6015,7 +6065,6 @@ func (m *QueryPinnedCodesRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryPinnedCodesResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6178,7 +6227,6 @@ func (m *QueryPinnedCodesResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryParamsRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6229,7 +6277,6 @@ func (m *QueryParamsRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6313,7 +6360,6 @@ func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryContractsByCreatorRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6432,7 +6478,6 @@ func (m *QueryContractsByCreatorRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryContractsByCreatorResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6551,7 +6596,6 @@ func (m *QueryContractsByCreatorResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryWasmLimitsConfigRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6602,7 +6646,6 @@ func (m *QueryWasmLimitsConfigRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryWasmLimitsConfigResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6685,7 +6728,6 @@ func (m *QueryWasmLimitsConfigResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryBuildAddressRequest) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6866,7 +6908,6 @@ func (m *QueryBuildAddressRequest) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-
 func (m *QueryBuildAddressResponse) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -6949,7 +6990,210 @@ func (m *QueryBuildAddressResponse) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
+func (m *QueryBlacklistRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryBlacklistRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryBlacklistRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageRequest{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
 
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryBlacklistResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryBlacklistResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryBlacklistResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field BlacklistedMsgs", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.BlacklistedMsgs = append(m.BlacklistedMsgs, string(dAtA[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageResponse{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
 func skipQuery(dAtA []byte) (n int, err error) {
 	l := len(dAtA)
 	iNdEx := 0

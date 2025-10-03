@@ -116,6 +116,9 @@ type Keeper struct {
 
 	// wasmLimits contains the limits sent to wasmvm on init
 	wasmLimits wasmvmtypes.WasmLimits
+
+	// blacklistMsgs is a set of msgs that are blacklisted from using the module.
+	blacklistMsgs collections.KeySet[string]
 }
 
 func (k Keeper) getUploadAccessConfig(ctx context.Context) types.AccessConfig {
@@ -128,6 +131,10 @@ func (k Keeper) getInstantiateAccessConfig(ctx context.Context) types.AccessType
 
 func (k Keeper) GetWasmLimits() wasmvmtypes.WasmLimits {
 	return k.wasmLimits
+}
+
+func (k Keeper) GetBlacklistMsgs() collections.KeySet[string] {
+	return k.blacklistMsgs
 }
 
 // GetParams returns the total set of wasm parameters.
@@ -638,7 +645,6 @@ func (k Keeper) Sudo(ctx context.Context, contractAddress sdk.AccAddress, msg []
 	sdkCtx := sdk.UnwrapSDKContext(ctx)
 	sdkCtx, discount := k.checkDiscountEligibility(sdkCtx, codeInfo.CodeHash, k.IsPinnedCode(ctx, contractInfo.CodeID))
 	setupCost := k.gasRegister.SetupContractCost(discount, len(msg))
-
 	sdkCtx.GasMeter().ConsumeGas(setupCost, "Loading CosmWasm module: sudo")
 
 	env := types.NewEnv(sdkCtx, k.txHash, contractAddress)
@@ -1340,7 +1346,11 @@ func (k *Keeper) handleContractResponse(
 		}
 		ctx.EventManager().EmitEvents(customEvents)
 	}
-	return k.wasmVMResponseHandler.Handle(ctx, contractAddr, ibcPort, msgs, data)
+	res, err := k.wasmVMResponseHandler.Handle(ctx, contractAddr, ibcPort, msgs, data)
+	if err != nil {
+		return nil, err
+	}
+	return res, nil
 }
 
 func (k Keeper) runtimeGasForContract(ctx sdk.Context) uint64 {

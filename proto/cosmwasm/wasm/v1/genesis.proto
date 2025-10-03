@@ -27,6 +27,11 @@ message GenesisState {
     (amino.dont_omitempty) = true,
     (gogoproto.jsontag) = "sequences,omitempty"
   ];
+  repeated string blacklist = 5 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true,
+    (gogoproto.jsontag) = "blacklist,omitempty"
+  ];
 }
 
 // Code struct encompasses CodeInfo and CodeBytes

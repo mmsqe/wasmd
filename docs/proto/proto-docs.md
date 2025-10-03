@@ -61,6 +61,8 @@
     - [CodeInfoResponse](#cosmwasm.wasm.v1.CodeInfoResponse)
     - [QueryAllContractStateRequest](#cosmwasm.wasm.v1.QueryAllContractStateRequest)
     - [QueryAllContractStateResponse](#cosmwasm.wasm.v1.QueryAllContractStateResponse)
+    - [QueryBlacklistRequest](#cosmwasm.wasm.v1.QueryBlacklistRequest)
+    - [QueryBlacklistResponse](#cosmwasm.wasm.v1.QueryBlacklistResponse)
     - [QueryBuildAddressRequest](#cosmwasm.wasm.v1.QueryBuildAddressRequest)
     - [QueryBuildAddressResponse](#cosmwasm.wasm.v1.QueryBuildAddressResponse)
     - [QueryCodeInfoRequest](#cosmwasm.wasm.v1.QueryCodeInfoRequest)
@@ -91,6 +93,8 @@
     - [Query](#cosmwasm.wasm.v1.Query)
   
 - [cosmwasm/wasm/v1/tx.proto](#cosmwasm/wasm/v1/tx.proto)
+    - [MsgAddBlacklistMsgs](#cosmwasm.wasm.v1.MsgAddBlacklistMsgs)
+    - [MsgAddBlacklistMsgsResponse](#cosmwasm.wasm.v1.MsgAddBlacklistMsgsResponse)
     - [MsgAddCodeUploadParamsAddresses](#cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses)
     - [MsgAddCodeUploadParamsAddressesResponse](#cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse)
     - [MsgClearAdmin](#cosmwasm.wasm.v1.MsgClearAdmin)
@@ -105,6 +109,8 @@
     - [MsgMigrateContractResponse](#cosmwasm.wasm.v1.MsgMigrateContractResponse)
     - [MsgPinCodes](#cosmwasm.wasm.v1.MsgPinCodes)
     - [MsgPinCodesResponse](#cosmwasm.wasm.v1.MsgPinCodesResponse)
+    - [MsgRemoveBlacklistMsgs](#cosmwasm.wasm.v1.MsgRemoveBlacklistMsgs)
+    - [MsgRemoveBlacklistMsgsResponse](#cosmwasm.wasm.v1.MsgRemoveBlacklistMsgsResponse)
     - [MsgRemoveCodeUploadParamsAddresses](#cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses)
     - [MsgRemoveCodeUploadParamsAddressesResponse](#cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse)
     - [MsgStoreAndInstantiateContract](#cosmwasm.wasm.v1.MsgStoreAndInstantiateContract)
@@ -562,6 +568,7 @@ GenesisState - genesis state of x/wasm
 | `codes` | [Code](#cosmwasm.wasm.v1.Code) | repeated |  |
 | `contracts` | [Contract](#cosmwasm.wasm.v1.Contract) | repeated |  |
 | `sequences` | [Sequence](#cosmwasm.wasm.v1.Sequence) | repeated |  |
+| `blacklist` | [string](#string) | repeated |  |
 
 
 
@@ -1036,6 +1043,37 @@ Query/AllContractState RPC method
 
 
 
+<a name="cosmwasm.wasm.v1.QueryBlacklistRequest"></a>
+
+### QueryBlacklistRequest
+QueryBlacklistRequest is request type for the Query/Blacklist RPC method.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `pagination` | [cosmos.base.query.v1beta1.PageRequest](#cosmos.base.query.v1beta1.PageRequest) |  | pagination defines an optional pagination for the request. |
+
+
+
+
+
+
+<a name="cosmwasm.wasm.v1.QueryBlacklistResponse"></a>
+
+### QueryBlacklistResponse
+QueryBlacklistResponse is response type for the Query/Blacklist RPC method.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `blacklisted_msgs` | [string](#string) | repeated | blacklisted_msgs defines the list of blacklisted msgs. |
+| `pagination` | [cosmos.base.query.v1beta1.PageResponse](#cosmos.base.query.v1beta1.PageResponse) |  | pagination defines the pagination in the response. |
+
+
+
+
+
+
 <a name="cosmwasm.wasm.v1.QueryBuildAddressRequest"></a>
 
 ### QueryBuildAddressRequest
@@ -1480,6 +1518,7 @@ Query provides defines the gRPC querier service
 | `ContractsByCreator` | [QueryContractsByCreatorRequest](#cosmwasm.wasm.v1.QueryContractsByCreatorRequest) | [QueryContractsByCreatorResponse](#cosmwasm.wasm.v1.QueryContractsByCreatorResponse) | ContractsByCreator gets the contracts by creator | GET|/cosmwasm/wasm/v1/contracts/creator/{creator_address}|
 | `WasmLimitsConfig` | [QueryWasmLimitsConfigRequest](#cosmwasm.wasm.v1.QueryWasmLimitsConfigRequest) | [QueryWasmLimitsConfigResponse](#cosmwasm.wasm.v1.QueryWasmLimitsConfigResponse) | WasmLimitsConfig gets the configured limits for static validation of Wasm files, encoded in JSON. | GET|/cosmwasm/wasm/v1/wasm-limits-config|
 | `BuildAddress` | [QueryBuildAddressRequest](#cosmwasm.wasm.v1.QueryBuildAddressRequest) | [QueryBuildAddressResponse](#cosmwasm.wasm.v1.QueryBuildAddressResponse) | BuildAddress builds a contract address | GET|/cosmwasm/wasm/v1/contract/build_address|
+| `Blacklist` | [QueryBlacklistRequest](#cosmwasm.wasm.v1.QueryBlacklistRequest) | [QueryBlacklistResponse](#cosmwasm.wasm.v1.QueryBlacklistResponse) | Blacklist gets the blacklist msg types | GET|/cosmwasm/wasm/v1/contract/blacklist|
 
  <!-- end services -->
 
@@ -1489,6 +1528,33 @@ Query provides defines the gRPC querier service
 <p align="right"><a href="#top">Top</a></p>
 
 ## cosmwasm/wasm/v1/tx.proto
+
+
+
+<a name="cosmwasm.wasm.v1.MsgAddBlacklistMsgs"></a>
+
+### MsgAddBlacklistMsgs
+MsgAddBlacklistMsgs is the message type for adding a msg to the blacklist.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `authority` | [string](#string) |  |  |
+| `blacklist_msgs` | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="cosmwasm.wasm.v1.MsgAddBlacklistMsgsResponse"></a>
+
+### MsgAddBlacklistMsgsResponse
+MsgAddBlacklistMsgsResponse defines the response type for adding a msg to the
+blacklist.
+
+
+
 
 
 
@@ -1713,6 +1779,34 @@ MsgPinCodesResponse defines the response structure for executing a
 MsgPinCodes message.
 
 Since: 0.40
+
+
+
+
+
+
+<a name="cosmwasm.wasm.v1.MsgRemoveBlacklistMsgs"></a>
+
+### MsgRemoveBlacklistMsgs
+MsgRemoveBlacklistMsgs is the message type for removing a msg from the
+blacklist.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `authority` | [string](#string) |  |  |
+| `blacklist_msgs` | [string](#string) | repeated |  |
+
+
+
+
+
+
+<a name="cosmwasm.wasm.v1.MsgRemoveBlacklistMsgsResponse"></a>
+
+### MsgRemoveBlacklistMsgsResponse
+MsgRemoveBlacklistMsgsResponse defines the response type for removing a msg
+from the blacklist.
 
 
 
@@ -2095,6 +2189,8 @@ Since: 0.42 | |
 | `UpdateContractLabel` | [MsgUpdateContractLabel](#cosmwasm.wasm.v1.MsgUpdateContractLabel) | [MsgUpdateContractLabelResponse](#cosmwasm.wasm.v1.MsgUpdateContractLabelResponse) | UpdateContractLabel sets a new label for a smart contract
 
 Since: 0.43 | |
+| `AddBlacklistMsgs` | [MsgAddBlacklistMsgs](#cosmwasm.wasm.v1.MsgAddBlacklistMsgs) | [MsgAddBlacklistMsgsResponse](#cosmwasm.wasm.v1.MsgAddBlacklistMsgsResponse) | AddBlacklistMsg defines a (governance) operation for adding a msg to the blacklist. | |
+| `RemoveBlacklistMsgs` | [MsgRemoveBlacklistMsgs](#cosmwasm.wasm.v1.MsgRemoveBlacklistMsgs) | [MsgRemoveBlacklistMsgsResponse](#cosmwasm.wasm.v1.MsgRemoveBlacklistMsgsResponse) | RemoveBlacklistMsg defines a (governance) operation for removing a msg from the blacklist. | |
 
  <!-- end services -->
 

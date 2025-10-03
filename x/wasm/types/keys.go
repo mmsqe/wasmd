@@ -36,6 +36,7 @@ var (
 	ContractsByCreatorPrefix                       = []byte{0x09}
 	ParamsKey                                      = []byte{0x10}
 	AsyncAckKeyPrefix                              = []byte{0x11}
+	BlackListMsgsPrefix                            = []byte{0x12}
 
 	KeySequenceCodeID     = append(SequenceKeyPrefix, []byte("lastCodeId")...)
 	KeySequenceInstanceID = append(SequenceKeyPrefix, []byte("lastContractId")...)

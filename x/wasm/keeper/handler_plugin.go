@@ -7,6 +7,7 @@ import (
 	wasmvmtypes "github.com/CosmWasm/wasmvm/v3/types"
 	channeltypesv2 "github.com/cosmos/ibc-go/v10/modules/core/04-channel/v2/types"
 
+	"cosmossdk.io/collections"
 	errorsmod "cosmossdk.io/errors"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
@@ -31,9 +32,10 @@ type MessageRouter interface {
 
 // SDKMessageHandler can handles messages that can be encoded into sdk.Message types and routed.
 type SDKMessageHandler struct {
-	router   MessageRouter
-	encoders msgEncoder
-	cdc      codec.Codec
+	router        MessageRouter
+	encoders      msgEncoder
+	cdc           codec.Codec
+	blacklistMsgs collections.KeySet[string]
 }
 
 // NewDefaultMessageHandler constructor
@@ -52,22 +54,32 @@ func NewDefaultMessageHandler(
 		encoders = encoders.Merge(e)
 	}
 	return NewMessageHandlerChain(
-		NewSDKMessageHandler(cdc, router, encoders),
+		NewSDKMessageHandler(cdc, router, encoders, keeper.blacklistMsgs),
 		NewIBCRawPacketHandler(ics4Wrapper, keeper),
 		NewIBC2RawPacketHandler(channelKeeperV2),
 		NewBurnCoinMessageHandler(bankKeeper),
 	)
 }
 
-func NewSDKMessageHandler(cdc codec.Codec, router MessageRouter, encoders msgEncoder) SDKMessageHandler {
+func NewSDKMessageHandler(cdc codec.Codec, router MessageRouter, encoders msgEncoder, blacklistMsgs collections.KeySet[string]) SDKMessageHandler {
 	return SDKMessageHandler{
-		cdc:      cdc,
-		router:   router,
-		encoders: encoders,
+		cdc:           cdc,
+		router:        router,
+		encoders:      encoders,
+		blacklistMsgs: blacklistMsgs,
 	}
 }
 
 func (h SDKMessageHandler) DispatchMsg(ctx sdk.Context, contractAddr sdk.AccAddress, contractIBCPortID string, msg wasmvmtypes.CosmosMsg) (events []sdk.Event, data [][]byte, msgResponses [][]*codectypes.Any, err error) {
+	if msg.Any != nil {
+		disabled, err := h.blacklistMsgs.Has(ctx, msg.Any.TypeURL)
+		if err != nil {
+			return nil, nil, nil, err
+		}
+		if disabled {
+			return nil, nil, nil, fmt.Errorf("execution of this message: %s is disabled", msg.Any.TypeURL)
+		}
+	}
 	sdkMsgs, err := h.encoders.Encode(ctx, contractAddr, contractIBCPortID, msg)
 	if err != nil {
 		return nil, nil, nil, err

@@ -56,9 +56,10 @@ func NewKeeper(
 		propagateGovAuthorization: map[types.AuthorizationPolicyAction]struct{}{
 			types.AuthZActionInstantiate: {},
 		},
-		authority:  authority,
-		txHash:     func(data []byte) []byte { sum := sha256.Sum256(data); return sum[:] },
-		wasmLimits: vmConfig.WasmLimits,
+		authority:     authority,
+		txHash:        func(data []byte) []byte { sum := sha256.Sum256(data); return sum[:] },
+		wasmLimits:    vmConfig.WasmLimits,
+		blacklistMsgs: collections.NewKeySet(sb, types.BlackListMsgsPrefix, "blacklist_msgs", collections.StringKey),
 	}
 	keeper.messenger = NewDefaultMessageHandler(keeper, router, ics4Wrapper, channelKeeperV2, bankKeeper, cdc, portSource)
 	keeper.wasmVMQueryHandler = DefaultQueryPlugins(bankKeeper, stakingKeeper, distrKeeper, channelKeeper, keeper)

@@ -11,6 +11,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
+	"cosmossdk.io/collections"
 	corestoretypes "cosmossdk.io/core/store"
 	errorsmod "cosmossdk.io/errors"
 	"cosmossdk.io/store/prefix"
@@ -492,5 +493,26 @@ func BuildAddressPredictable(req *types.QueryBuildAddressRequest) (*types.QueryB
 	}
 	return &types.QueryBuildAddressResponse{
 		Address: BuildContractAddressPredictable(codeHash, creator, salt, initMsg).String(),
+	}, nil
+}
+
+func (q GrpcQuerier) Blacklist(ctx context.Context, req *types.QueryBlacklistRequest) (*types.QueryBlacklistResponse, error) {
+	blacklist := []string{}
+	_, pageRes, err := query.CollectionPaginate(
+		ctx,
+		q.keeper.GetBlacklistMsgs(),
+		req.Pagination,
+		func(key string, _ collections.NoValue) (bool, error) {
+			blacklist = append(blacklist, key)
+			return true, nil
+		},
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return &types.QueryBlacklistResponse{
+		BlacklistedMsgs: blacklist,
+		Pagination:      pageRes,
 	}, nil
 }
