@@ -193,6 +193,20 @@ func (am AppModule) InitGenesis(ctx sdk.Context, cdc codec.JSONCodec, data json.
 // module.
 func (am AppModule) ExportGenesis(ctx sdk.Context, cdc codec.JSONCodec) json.RawMessage {
 	gs := keeper.ExportGenesis(ctx, am.keeper)
+	msgs := make([]string, 0)
+	iter, err := am.keeper.GetBlacklistMsgs().Iterate(ctx, nil)
+	if err != nil {
+		panic(err)
+	}
+	defer iter.Close()
+	for ; iter.Valid(); iter.Next() {
+		msg, err := iter.Key()
+		if err != nil {
+			panic(err)
+		}
+		msgs = append(msgs, msg)
+	}
+	gs.Blacklist = msgs
 	return cdc.MustMarshalJSON(gs)
 }
 
